@@ -1,66 +1,76 @@
-## 🌐 AI Powered Multi-Language Translator
+# 🌐 AI Powered Multi-Language Translator (Google Translate Based)
 
-This project is a **Google Colab-based application** that enables users to translate text across multiple languages using `MarianMT` models from **Hugging Face** Transformers. It provides an intuitive, easy-to-use notebook interface where users can input text, choose source and target languages, and receive high-quality translations in real-time.
-
----
-## 🚀 Features
-
-✅ Translate text across 40+ languages
-
-✅ Uses Hugging Face MarianMT — a pretrained multilingual model
-
-✅ Fully functional in Google Colab — no local setup needed
-
-✅ Lightweight and simple to operate
-
-✅ Ideal for students, researchers, and hobby projects
+This project is a Google Colab notebook that allows users to translate text between multiple languages using **Google Translate**, accessed through the `googletrans` Python library. It's simple, fast, and works entirely in the cloud — no setup required.
 
 ---
-## ▶️ How to Run on Google Colab
 
-- Click the badge below to open the notebook in Google Colab:
+## ✨ Features
 
-- Once the notebook opens, click Runtime > Run all to execute the notebook.
-
-- In the input cell:
-   - Enter your source and target language.
-   - Type or paste the text you want to translate.
-   - Run the cell to get the translated output.
+- 🌍 Translate between **100+ languages**
+- 🧠 Powered by **Google Translate**
+- ⚡ Fast and accurate translations
+- 💻 Runs entirely on **Google Colab**
+- ✅ No setup or model downloads required
 
 ---
+
+## 🧠 Technology Stack
+
+- Google Colab - Cloud notebook environment
+- Python - Programming language
+- oogletrans - Python wrapper for Google Translate API
+- Google Translate - Translation engine (online)
+
+---
+
 ## 🔍 How It Works
 
-- The notebook loads a pretrained MarianMTModel and Tokenizer based on the chosen source and target languages.
+The notebook uses the `googletrans` library to send requests to **Google Translate** and receive translations in real time.
 
-- It uses the transformers library to perform translation tasks with just a few lines of code.
+## 🔧 Code Snippet:
 
-- The model is executed directly in the Colab environment — no need for heavy installations or configurations.
+```python
+from googletrans import Translator
 
----
-## 🧠 Model & Technology
-
-- Model Used: MarianMT (Multilingual Translation Models by Facebook AI)
-
-- Library: Hugging Face Transformers
-
-- Notebook Platform: Google Colab
-
-- Programming Language: Python
+translator = Translator()
+translated = translator.translate("Hello", src='en', dest='fr')
+print(translated.text)  # Output: Bonjour
+```
+You can change src (source language) and dest (destination language) using ISO language codes.
 
 ---
-## 💡 Use Cases
 
-- Translating articles, blogs, or academic content
+## 💬 Example Usage
+```python
+text = "I love programming!"
+source_lang = "en"
+target_lang = "es"
 
-- Learning or comparing phrases in different languages
-
-- Assisting in multilingual chatbot development
-
-- Supporting non-native language users in research
+result = translator.translate(text, src=source_lang, dest=target_lang)
+print("Translated Text:", result.text)
+# Output: ¡Me encanta programar!
+```
 
 ---
+
+## 📚 Use Cases
+
+- Translating content for personal or academic use
+- Helping users understand foreign-language text
+- Supporting language learners
+- Creating multilingual chatbot responses
+- Assisting travelers with quick translation tasks
+
+---
+
 ## 📜 License
 
-- This project is licensed under the MIT License.
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute it with appropriate attribution.
 
-- You are free to use, modify, and distribute it with attribution.
+---
+## 🙋‍♂️ Disclaimer
+
+This project uses the unofficial googletrans Python library which relies on the web version of Google Translate. It may stop working if Google changes its API or security protocols. For commercial or production use, consider Google Cloud Translation API.
+
+---
